@@ -1,0 +1,50 @@
+@mixin b($point) {
+
+    @if $point == laptop-l {
+        @media (max-width: 1440px) {
+            @content;
+        }
+    }
+
+    @if $point == laptop-m {
+        @media (max-width: 1366px) {
+            @content;
+        }
+    }
+
+    @if $point == laptop {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point == tablet {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point == mobile-l {
+        @media (max-width: 425px) {
+            @content;
+        }
+    }
+
+    @else if $point == afterLaptop {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $point == mobile {
+        @media (max-width: 375px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: ($point + 'px')) {
+            @content;
+        }
+    }
+}
